@@ -9,9 +9,14 @@ import org.jooby.json.Jackson;
 public class App extends Jooby {
 
   {
+    // https for wss
+    securePort(8043);
+
     use(new Jackson());
 
+    assets("/index.js", "index.js");
     assets("/", "index.html");
+    assets("/secure", "index.html");
 
     /** Start a websocket at /ws and send back JSON: */
     ws("/ws", ws -> {

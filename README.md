@@ -17,6 +17,8 @@ This project contains a simple application that:
 public class App extends Jooby {
 
   {
+    // https for wss
+    securePort(8043);
     use(new Jackson());
 
     assets("/", "index.html");
@@ -41,6 +43,9 @@ public class App extends Jooby {
 ## run
 
     mvn jooby:run
+
+- WebSocket: [http://localhost:8080](http://localhost:8080)
+- WebSocket over SSL: [https://localhost:8043/secure](https://localhost:8043/secure)
 
 ## help
 
